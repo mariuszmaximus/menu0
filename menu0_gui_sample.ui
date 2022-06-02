@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>menu0_gui_sample</class>
+ <widget class="QMainWindow" name="menu0_gui_sample">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menumenu0">
+    <property name="title">
+     <string>menu0</string>
+    </property>
+    <addaction name="actionmenu0"/>
+    <addaction name="actionmenu02"/>
+    <addaction name="actionmenu03"/>
+    <addaction name="actionclose_menu"/>
+   </widget>
+   <widget class="QMenu" name="menumenu1">
+    <property name="title">
+     <string>menu1</string>
+    </property>
+    <addaction name="actionmenu11"/>
+    <addaction name="actionmenu12"/>
+    <addaction name="actionmenu13"/>
+   </widget>
+   <addaction name="menumenu0"/>
+   <addaction name="menumenu1"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionmenu0">
+   <property name="text">
+    <string>menu01</string>
+   </property>
+  </action>
+  <action name="actionmenu02">
+   <property name="text">
+    <string>menu02</string>
+   </property>
+  </action>
+  <action name="actionmenu03">
+   <property name="text">
+    <string>menu03</string>
+   </property>
+  </action>
+  <action name="actionmenu11">
+   <property name="text">
+    <string>menu11</string>
+   </property>
+  </action>
+  <action name="actionmenu12">
+   <property name="text">
+    <string>menu12</string>
+   </property>
+  </action>
+  <action name="actionmenu13">
+   <property name="text">
+    <string>menu13</string>
+   </property>
+  </action>
+  <action name="actionclose_menu">
+   <property name="text">
+    <string>close menu</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
