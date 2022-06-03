@@ -37,6 +37,7 @@ public:
         if(instance_menu_gui)
         {
             instance_menu_gui->close();
+            instance_menu_gui->setParent(nullptr);
         }
     }
 
