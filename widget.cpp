@@ -10,17 +10,15 @@ Widget::Widget(QWidget *parent)
     ui->setupUi(this);
 
     Menu0::RegisterMenu(
-                [=]()-> menu0_gui_sample*
+                [=]()-> IMenu0_GUI*
                        {
                            return new menu0_gui_sample(this);
-                           //return  Menu0_gui::instance(this);
                        });
-
-
 }
 
 Widget::~Widget()
 {
+    qDebug()<<" ********************* DESTRUKTOR *******************" << this;
     delete ui;
 }
 

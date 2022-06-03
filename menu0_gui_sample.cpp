@@ -23,6 +23,7 @@ menu0_gui_sample::menu0_gui_sample(QWidget *parent) :
 
 menu0_gui_sample::~menu0_gui_sample()
 {
+    qDebug()<<" ********************* DESTRUKTOR *******************" << this;
     delete ui;
 }
 
@@ -32,10 +33,9 @@ void menu0_gui_sample::on_actionclose_menu_triggered()
     setParent(nullptr);
 }
 
-
 bool menu0_gui_sample::eventFilter(QObject* obj, QEvent* event)
 {
-    qDebug()<< obj<<" "<<event;
+    // qDebug()<< obj<<" "<<event;
 
     if (event->type()==QEvent::KeyPress||event->type()==QEvent::KeyRelease)
     {
@@ -43,17 +43,18 @@ bool menu0_gui_sample::eventFilter(QObject* obj, QEvent* event)
         if ( (key->key()==Qt::Key_Escape))
         {
             close();
+            setParent(nullptr);
         }
         QMetaEnum metaEnumKey = QMetaEnum::fromType<Qt::Key>();
         QString _key = metaEnumKey.valueToKey(key->key());
-        qDebug("key press %s", _key.toStdString().c_str());
+        //qDebug("key press %s", _key.toStdString().c_str());
         return false;
     }
     else
     if ( event->type() == QEvent::Close )
     {
-        qDebug()<< obj;
-        qDebug("menu0_gui_sample::eventFilter == >QEvent::Close ???? \n");
+        //qDebug()<< obj;
+        //qDebug("menu0_gui_sample::eventFilter == >QEvent::Close ???? \n");
         close();
         return QObject::eventFilter(obj, event);
     }
@@ -62,11 +63,9 @@ bool menu0_gui_sample::eventFilter(QObject* obj, QEvent* event)
     }
 }
 
-
 void menu0_gui_sample::keyPressEvent(QKeyEvent *event)
 {
     qDebug() << "menu0_gui_sample::keyPressEvent" << event;
 
     QWidget::keyPressEvent(event);
 }
-

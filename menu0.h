@@ -15,6 +15,10 @@ private:
     inline static IMenu0_GUI * instance_menu_gui{nullptr}; 
     Menu0(){};
 public:
+    ~Menu0()
+    {
+        qDebug()<<" ********************* DESTRUKTOR *******************" << this;
+    }
     ////////////////////////////////////////////// 
     static bool Visible(void)
     {
